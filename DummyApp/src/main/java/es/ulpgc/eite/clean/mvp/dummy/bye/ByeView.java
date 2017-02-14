@@ -8,12 +8,12 @@ import android.widget.TextView;
 
 import es.ulpgc.eite.clean.mvp.GenericActivity;
 import es.ulpgc.eite.clean.mvp.dummy.R;
-import es.ulpgc.eite.clean.mvp.dummy.hello.Hello;
-import es.ulpgc.eite.clean.mvp.dummy.hello.HelloPresenter;
+import es.ulpgc.eite.clean.mvp.dummy.bye.Bye;
+import es.ulpgc.eite.clean.mvp.dummy.bye.ByePresenter;
 
 public class ByeView
-    extends GenericActivity<Hello.PresenterToView, Hello.ViewToPresenter, HelloPresenter>
-    implements Hello.PresenterToView {
+    extends GenericActivity<Bye.PresenterToView, Bye.ViewToPresenter, ByePresenter>
+    implements Bye.PresenterToView {
 
   private Toolbar toolbar;
   private Button button;
@@ -44,14 +44,14 @@ public class ByeView
    */
   @Override
   protected void onResume() {
-    super.onResume(HelloPresenter.class, this);
+    super.onResume(ByePresenter.class, this);
   }
 
   /*
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.menu_hello, menu);
+    getMenuInflater().inflate(R.menu.menu_bye, menu);
     return true;
   }
 

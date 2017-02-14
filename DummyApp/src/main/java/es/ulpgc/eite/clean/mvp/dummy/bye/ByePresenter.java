@@ -87,7 +87,6 @@ public class ByePresenter extends GenericPresenter
     Log.d(TAG, "calling onDestroy()");
   }
 
-
   ///////////////////////////////////////////////////////////////////////////////////
   // View To Presenter /////////////////////////////////////////////////////////////
 
@@ -116,12 +115,10 @@ public class ByePresenter extends GenericPresenter
     checkToolbarVisibility();
     checkTextVisibility();
   }
-
   @Override
   public void setToolbarVisibility(boolean visible) {
     toolbarVisible = visible;
   }
-
   @Override
   public void setTextVisibility(boolean visible) {
     textVisible = visible;
@@ -136,7 +133,6 @@ public class ByePresenter extends GenericPresenter
   public Context getManagedContext(){
     return getActivityContext();
   }
-
   @Override
   public void destroyView(){
     if(isViewRunning()) {
@@ -147,7 +143,6 @@ public class ByePresenter extends GenericPresenter
   public boolean isToolbarVisible() {
     return toolbarVisible;
   }
-
   @Override
   public boolean isTextVisible() {
     return textVisible;
@@ -164,7 +159,6 @@ public class ByePresenter extends GenericPresenter
       }
     }
   }
-
   private void checkTextVisibility(){
     Log.d(TAG, "calling checkTextVisibility()");
     if(isViewRunning()) {

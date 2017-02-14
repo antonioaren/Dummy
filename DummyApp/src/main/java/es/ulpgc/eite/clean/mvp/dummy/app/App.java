@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 
+import es.ulpgc.eite.clean.mvp.dummy.bye.Bye;
+import es.ulpgc.eite.clean.mvp.dummy.bye.ByePresenter;
 import es.ulpgc.eite.clean.mvp.dummy.dummy.Dummy;
 import es.ulpgc.eite.clean.mvp.dummy.dummy.DummyView;
 import es.ulpgc.eite.clean.mvp.dummy.hello.Hello;
@@ -13,7 +15,8 @@ import es.ulpgc.eite.clean.mvp.dummy.hello.HelloPresenter;
 public class App extends Application implements Mediator, Navigator {
 
   private DummyState toDummyState, dummyToState;
-  private DummyState toHelloState, helloToState;
+  private HelloState toHelloState, helloToState;
+  private ByeState toByeState,byeState;
 
   @Override
   public void onCreate() {
@@ -45,6 +48,16 @@ public class App extends Application implements Mediator, Navigator {
 
   }
 
+  @Override
+  public void startingByeScreen(Bye.ToBye presenter) {
+    if(toByeState != null) {
+      presenter.setToolbarVisibility(toByeState.toolbarVisibility);
+      presenter.setTextVisibility(toByeState.textVisibility);
+    }
+    presenter.onScreenStarted();
+
+  }
+
   ///////////////////////////////////////////////////////////////////////////////////
   // Navigator /////////////////////////////////////////////////////////////////////
 
@@ -70,5 +83,16 @@ public class App extends Application implements Mediator, Navigator {
     boolean toolbarVisibility;
     boolean textVisibility;
   }
+
+  private class HelloState {
+    boolean toolbarVisibility;
+    boolean textVisibility;
+  }
+
+  private class ByeState {
+    boolean toolbarVisibility;
+    boolean textVisibility;
+  }
+
 
 }
