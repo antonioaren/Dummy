@@ -22,7 +22,7 @@ public class ByeView
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_hello);
+    setContentView(R.layout.activity_bye);
 
     text = (TextView) findViewById(R.id.text);
 
