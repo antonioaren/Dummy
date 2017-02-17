@@ -11,7 +11,7 @@ public class ByeModel extends GenericModel<Bye.ModelToPresenter>
   private String byeLabel;
   private int numOfTimes;
   private String msgText;
-
+//Prueba para el repositorio
   /**
    * Method that recovers a reference to the PRESENTER
    * You must ALWAYS call {@link super#onCreate(Object)} here
